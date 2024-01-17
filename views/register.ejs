@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirate Treasure</title>
+    <link rel="stylesheet" href="resources/css/style.css">
+</head>
+<body style=" background-color: #2C3E50; margin-top: 15%;">
+    
+    <div class=login-form>
+        <h2>Register</h2>
+        <form action="/register" method="POST">
+
+            <input type="text" name="name" required placeholder="name">
+            <input type="text" name="email" required placeholder="email">
+            <input type="password" name="pass" required placeholder="password">
+            <input type="password" name="passwordConfirm" placeholder="confirm password">
+            
+
+            <div style="display: inline;">
+                <a href="/" class="btn-cancel">Cancel</a><input type="submit" class="btn-save" value="Save">
+            </div>
+
+            
+        </form>
+       
+    </div>
+    
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if(typeof alert != "undefined"){ %>
+        <script>
+            Swal.fire({
+                title: '<%= alertTitle %>',
+                text: '<%= alertMessage %>', 
+                icon: '<%= alertIcon %>', 
+                showConfirmButton: '<%= showConfirmButton %>' ,
+                timer: '<%= timer %>'
+            }).then(()=>{
+                window.location='/ <%= ruta %>'
+            })
+        </script>
+    <% } %>
+</body>
+</html>
